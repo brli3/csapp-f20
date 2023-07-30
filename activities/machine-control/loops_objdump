@@ -1,0 +1,40 @@
+
+loops.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <forLoop>:
+   0:	ba 00 00 00 00       	mov    $0x0,%edx
+   5:	b8 00 00 00 00       	mov    $0x0,%eax
+   a:	39 f0                	cmp    %esi,%eax
+   c:	7d 0b                	jge    19 <forLoop+0x19>
+   e:	48 63 c8             	movslq %eax,%rcx
+  11:	03 14 8f             	add    (%rdi,%rcx,4),%edx
+  14:	83 c0 01             	add    $0x1,%eax
+  17:	eb f1                	jmp    a <forLoop+0xa>
+  19:	89 d0                	mov    %edx,%eax
+  1b:	c3                   	ret    
+
+000000000000001c <whileLoop>:
+  1c:	ba 00 00 00 00       	mov    $0x0,%edx
+  21:	b8 00 00 00 00       	mov    $0x0,%eax
+  26:	39 f0                	cmp    %esi,%eax
+  28:	7d 0b                	jge    35 <whileLoop+0x19>
+  2a:	48 63 c8             	movslq %eax,%rcx
+  2d:	03 14 8f             	add    (%rdi,%rcx,4),%edx
+  30:	83 c0 01             	add    $0x1,%eax
+  33:	eb f1                	jmp    26 <whileLoop+0xa>
+  35:	89 d0                	mov    %edx,%eax
+  37:	c3                   	ret    
+
+0000000000000038 <doWhileLoop>:
+  38:	ba 00 00 00 00       	mov    $0x0,%edx
+  3d:	b8 00 00 00 00       	mov    $0x0,%eax
+  42:	48 63 c8             	movslq %eax,%rcx
+  45:	03 14 8f             	add    (%rdi,%rcx,4),%edx
+  48:	83 c0 01             	add    $0x1,%eax
+  4b:	39 f0                	cmp    %esi,%eax
+  4d:	7c f3                	jl     42 <doWhileLoop+0xa>
+  4f:	89 d0                	mov    %edx,%eax
+  51:	c3                   	ret    

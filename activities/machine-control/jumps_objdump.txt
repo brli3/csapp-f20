@@ -1,0 +1,38 @@
+
+jumps.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <jump_insns>:
+   0:	e9 bd 00 00 00       	jmp    c2 <destination>
+   5:	0f 80 b7 00 00 00    	jo     c2 <destination>
+   b:	0f 81 b1 00 00 00    	jno    c2 <destination>
+  11:	0f 82 ab 00 00 00    	jb     c2 <destination>
+  17:	0f 82 a5 00 00 00    	jb     c2 <destination>
+  1d:	0f 82 9f 00 00 00    	jb     c2 <destination>
+  23:	0f 83 99 00 00 00    	jae    c2 <destination>
+  29:	0f 83 93 00 00 00    	jae    c2 <destination>
+  2f:	0f 83 8d 00 00 00    	jae    c2 <destination>
+  35:	0f 84 87 00 00 00    	je     c2 <destination>
+  3b:	0f 84 81 00 00 00    	je     c2 <destination>
+  41:	75 7f                	jne    c2 <destination>
+  43:	75 7d                	jne    c2 <destination>
+  45:	76 7b                	jbe    c2 <destination>
+  47:	76 79                	jbe    c2 <destination>
+  49:	77 77                	ja     c2 <destination>
+  4b:	77 75                	ja     c2 <destination>
+  4d:	78 73                	js     c2 <destination>
+  4f:	79 71                	jns    c2 <destination>
+  51:	7c 6f                	jl     c2 <destination>
+  53:	7c 6d                	jl     c2 <destination>
+  55:	7d 6b                	jge    c2 <destination>
+  57:	7d 69                	jge    c2 <destination>
+  59:	7e 67                	jle    c2 <destination>
+  5b:	7e 65                	jle    c2 <destination>
+  5d:	7f 63                	jg     c2 <destination>
+  5f:	7f 61                	jg     c2 <destination>
+	...
+
+00000000000000c2 <destination>:
+  c2:	c3                   	ret    
