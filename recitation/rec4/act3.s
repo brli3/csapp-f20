@@ -17,5 +17,5 @@ compare:
     .cfi_endproc
 .LFE0:
     .size    compare, .-compare
-    .ident    "GCC: (GNU) 11.4.0"
+    .ident    "GCC: (GNU) 4.8.1"
     .section    .note.GNU-stack,"",@progbits
