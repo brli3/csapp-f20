@@ -77,7 +77,11 @@ int main(int argc, char* argv[]) {
   // to 11 instead? How about 100? 1000? Make sure to set
   // the second argument back to 10 when you are done
   // testing.
-  // Answer:
+  // Answer: although larger than the allocated space,
+  // 11 and 100 are valid. 
+  // However, len = 1000 causes seg fault as part of the 
+  // program related stack are corrupted. C does not check
+  // for array bound.
   fillArray(array, 10);
 
   int value;
@@ -89,7 +93,9 @@ int main(int argc, char* argv[]) {
   // TODO(2): We can actually use the address of the value
   // declared here as if it were an array of a single
   // element; why is this possible?
-  // Answer:
+  // Answer: because array is a continuous block of memory 
+  // with the same type. Array of size 1 is the same as a 
+  // integer variable in terms of the memory layout.
   fillArray(&value, 1);
   // fillArray should set value to 0 * 3 + 2 = 2.
   assert(value == 2);
@@ -147,7 +153,7 @@ int main(int argc, char* argv[]) {
   // it. valgrind is a tool for analyzing how programs
   // use memory, which is often invaluable for C and
   // C++ programming.
-  // Answer:
+  // Answer: memory leakage
   free(heap_array);
 
   // TODO(4): Now it's your turn to write some code.
@@ -167,5 +173,18 @@ int main(int argc, char* argv[]) {
   // we used on the FourInts above.  ptr->a is 
   // equivalent to (*ptr).a .  Note the difference 
   // between FourInts and FourInts*.)
+
+  FourInts* pFourInts = (FourInts *) malloc(sizeof(FourInts));
+  if (pFourInts == NULL) return 1;
+
+  fillArray((int *) pFourInts, 4);
+
+  assert(pFourInts->a == 2);
+  assert(pFourInts->b == 5);
+  assert(pFourInts->c == 8);
+  assert(pFourInts->d == 11);
+
+  free(pFourInts);
+
   return 0;
 }
