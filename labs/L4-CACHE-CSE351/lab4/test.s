@@ -1,0 +1,62 @@
+	.file	"test.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"hello, world"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	subq	$8, %rsp
+	.cfi_def_cfa_offset 16
+	movl	$0, %ecx
+	jmp	.L2
+.L3:
+	addl	$1, %eax
+.L4:
+	cmpl	$999999, %eax
+	jle	.L3
+	addl	$1, %edx
+.L5:
+	cmpl	$999999, %edx
+	jg	.L9
+	movl	$0, %eax
+	jmp	.L4
+.L9:
+	addl	$1, %ecx
+.L2:
+	cmpl	$999999, %ecx
+	jg	.L10
+	movl	$0, %edx
+	jmp	.L5
+.L10:
+	leaq	.LC0(%rip), %rdi
+	call	puts@PLT
+	movl	$0, %eax
+	addq	$8, %rsp
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:

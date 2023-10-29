@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <getopt.h>
+#include <unistd.h>
 
 int main(int argc, char *argv[]) {	
-    extern char *optarg;
-    extern int optind, opterr, optopt;
+    //extern char *optarg;
+    //extern int optind, opterr, optopt;
 	
     int verbose = 0;
     int n = 0;

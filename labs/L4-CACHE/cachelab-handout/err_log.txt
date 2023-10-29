@@ -1,0 +1,2 @@
+./csim: invalid option -- 'e'
+Wrong args

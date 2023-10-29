@@ -1,0 +1,29 @@
+Test system:
+    Intel(R) Core(TM) i5-7360U CPU @ 2.30GHz
+
+
+
+original, i then j:
+            Java int  0.130000
+        Java Integer  0.210000
+                   C  0.100000
+         Optimized C  0.010000
+
+assign src[i][j]:
+            Java int  0.140000
+        Java Integer  4.630000
+                   C  0.120000
+         Optimized C  0.050000
+
+switch i, j loop order:
+            Java int  1.330000
+        Java Integer  9.130000
+                   C  0.960000
+         Optimized C  0.880000
+
+switch i, j loop order, no src assignment:
+            Java int  1.090000
+        Java Integer  1.180000
+                   C  0.640000
+         Optimized C  0.730000
+
