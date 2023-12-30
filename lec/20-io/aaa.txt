@@ -1,0 +1,4 @@
+total 28
+-rw-rw-r-- 1 brli brli    26 Dec 30 12:10 aaa.txt
+-rwxrwxr-x 1 brli brli 16392 Dec 30 12:12 redir_ls
+-rw-rw-r-- 1 brli brli   980 Dec 30 12:12 redir_ls.c
